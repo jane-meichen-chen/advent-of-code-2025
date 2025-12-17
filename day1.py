@@ -3,16 +3,6 @@ import os
 from get_data import download_input_data
 
 
-def dial(current_value: int, instruction: str) -> int:
-    diff = int(instruction[1:])
-    if instruction.startswith("L"):
-        diff = diff * -1
-    new_value = current_value + diff
-    while new_value < 0:
-        new_value += 100
-    return new_value % 100
-
-
 if __name__ == "__main__":
     current_value = 50
     part_one = 0

@@ -2,7 +2,6 @@ import os
 
 from get_data import download_input_data
 
-
 if __name__ == "__main__":
     current_value = 50
     part_one = 0

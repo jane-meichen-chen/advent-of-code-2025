@@ -25,12 +25,8 @@ def find_more_invalid_nums(num_range: str) -> list[int]:
     start, end = tuple(map(int, num_range.split("-")))
     for num in range(start, end + 1):
         num_str = str(num)
-        for repeating_count in range(2, len(num_str)+1):
-            if len(num_str) % repeating_count == 0:
-                chunk_size = len(num_str) // repeating_count
-                if all(num_str[chunk_size * i:chunk_size * (i + 1)] == num_str[:chunk_size] for i in range(1, repeating_count)):
-                    invalid_nums.append(num)
-                    break
+        if (num_str + num_str).find(num_str, 1) < len(num_str):
+            invalid_nums.append(num)
     return invalid_nums
 
 
